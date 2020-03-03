@@ -203,6 +203,16 @@ export const asyncRouterMap = [
         }
       },
       {
+        path: 'aftersale',
+        component: () => import('@/views/mall/aftersale'),
+        name: 'aftersale',
+        meta: {
+          perms: ['GET /admin/aftersale/list', 'GET /admin/aftersale/detail', 'POST /admin/order/receive', 'POST /admin/aftersale/complete', 'POST /admin/aftersale/reject'],
+          title: '售后管理',
+          noCache: true
+        }
+      },
+      {
         path: 'issue',
         component: () => import('@/views/mall/issue'),
         name: 'issue',
@@ -398,6 +408,16 @@ export const asyncRouterMap = [
         }
       },
       {
+        path: 'notice',
+        component: () => import('@/views/sys/notice'),
+        name: 'notice',
+        meta: {
+          perms: ['GET /admin/notice/list', 'POST /admin/notice/create', 'POST /admin/notice/update', 'POST /admin/notice/delete'],
+          title: '通知管理',
+          noCache: true
+        }
+      },
+      {
         path: 'log',
         component: () => import('@/views/sys/log'),
         name: 'log',
@@ -579,6 +599,12 @@ export const asyncRouterMap = [
         component: () => import('@/views/profile/password'),
         name: 'password',
         meta: { title: '修改密码', noCache: true }
+      },
+      {
+        path: 'notice',
+        component: () => import('@/views/profile/notice'),
+        name: 'notice',
+        meta: { title: '通知中心', noCache: true }
       }
     ],
     hidden: true
